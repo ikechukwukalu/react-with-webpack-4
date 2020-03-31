@@ -136,7 +136,7 @@ class Scripts extends Component {
   render() { 
     return ( 
       <Helmet> 
-        <script src='js/vendor.js'></script> 
+        <script src='js/vendors.js'></script> 
       </Helmet> 
     ); 
   } 
@@ -162,6 +162,16 @@ import Scripts from './scripts.jsx';
       <Scripts key="script" /> 
     ];
   }
+```
+
+```
+cd src/assets/js
+```
+
+• Add external Js files into the array as shown in ```read.js```\
+
+```
+node read.js
 ```
 • Create another file named scroll.js and add the following code\
 • Inside your app.js file add the following lines
