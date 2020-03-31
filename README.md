@@ -163,12 +163,12 @@ import Scripts from './scripts.jsx';
     ];
   }
 ```
+• Next run the following:\
 
 ```
 cd src/assets/js
 ```
-
-• Add external Js files into the array as shown in ```read.js```\
+• Add external Js files into the array as shown in ```read.js``` and then run the following:\
 
 ```
 node read.js
