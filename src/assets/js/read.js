@@ -1,4 +1,5 @@
 var fs = require("fs");
+var os = require("os");
 
 var externalJavascriptFiles = [
     'plugins/sample-1.js',
@@ -16,7 +17,7 @@ externalJavascriptFiles.map((element, index) => {
     fs.readFile(element, "utf-8", (err, data) => {
         if (err) { console.log(err) }
         setTimeout(() => {
-            fs.appendFile('vendors.js', data.toString(), function (err) {
+            fs.appendFile('vendors.js', data.toString() + os.EOL, function (err) {
                 if (err) { console.log(err) }
                 console.log(element +" written to file.");
             });
@@ -53,7 +54,7 @@ const getScript = (url) => {
             resp.on('end', () => {
                 resolve(
                     setTimeout(() => {
-                        fs.appendFile('vendors.js', data.toString(), function (err) {
+                        fs.appendFile('vendors.js', data.toString() + os.EOL, function (err) {
                             if (err) { console.log(err) }
                             console.log(url +" written to file.");
                         });
