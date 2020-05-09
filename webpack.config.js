@@ -6,9 +6,9 @@ const path = require('path');
 module.exports = { 
     entry: './src/index.js', 
     output: { 
-        path: path.resolve(__dirname, 'dist'), 
+        path: path.resolve(__dirname, 'react-webpack'), 
         filename: 'main.js', 
-        publicPath: '/' // For production - Change to base directory folder name Eg. https://localhost/basename/
+        publicPath: '/react-webpack' // For production - Change to base directory folder name Eg. https://localhost/basename/
     }, 
     devServer: { 
         historyApiFallback: true,
