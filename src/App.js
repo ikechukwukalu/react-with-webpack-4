@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
       super();
       this.state = {
-        base_url: 'http://localhost/react-webpack/', // For production - Change to base directory folder name Eg. https://localhost/basename/ 
+        base_url: 'http://localhost:8080/', // For production - Change to base directory folder name Eg. https://localhost/basename/ 
         api_url: '' // Tha api url
       }
   }
