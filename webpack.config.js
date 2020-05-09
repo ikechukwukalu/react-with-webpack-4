@@ -8,12 +8,12 @@ module.exports = {
     output: { 
         path: path.resolve(__dirname, 'dist'), 
         filename: 'main.js', 
-        publicPath: '/' // For production - Change to base directory folder name Eg. https://localhost/basename/
+        publicPath: '/react-webpack' // For production - Change to base directory folder name Eg. https://localhost/basename/
     }, 
     devServer: { 
         historyApiFallback: true,
         host: 'localhost', 
-        port: 8080, // For production - You may need to change this to 80 
+        port: 80, // For production - You may need to change this to 80 
     }, 
     module: { 
         rules: [ 
@@ -41,7 +41,7 @@ module.exports = {
             }, 
             { 
                 test: /\.(cur|jpg|jpeg|gif|png|woff|woff2|eot|ttf|svg)$/, 
-                loader: "url-loader?limit=50000&name=fonts/[name].[ext]" // For production change - url-loader?limit=50000&name=/fonts/[name].[ext] 
+                loader: "url-loader?limit=50000&name=/fonts/[name].[ext]" 
             } 
         ] 
     }, 

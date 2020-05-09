@@ -13,7 +13,7 @@ class Footer extends Component {
   
   render() {
     return (
-        <div>
+        <div className="ft">
             <h2 align="center">FOOTER</h2>
         </div>
     );

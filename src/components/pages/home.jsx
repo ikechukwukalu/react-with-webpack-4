@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import $ from 'jquery';
 import { Link } from "react-router-dom";
 
-import Scripts from '../../scripts.js';
+import Scripts from '../scripts/scripts.js';
 import logo from '../../logo.svg';
 
 class Home extends Component {

@@ -13,7 +13,7 @@ class Header extends Component {
   
   render() {
     return (
-        <div>
+        <div className="hd">
             <h2 align="center">HEADER</h2>
         </div>
     );
