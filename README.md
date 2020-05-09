@@ -63,7 +63,7 @@ module.exports = {
       },
       { 
         test: /\.(cur|jpg|jpeg|gif|png|woff|woff2|eot|ttf|svg)$/,
-        loader: "url-loader?limit=50000&name=fonts/[name].[ext]" // For production - url-loader?limit=50000&name=/fonts/[name].[ext]
+        loader: "url-loader?limit=50000&name=/fonts/[name].[ext]"
       }
     ]
   },
@@ -122,7 +122,7 @@ RewriteRule ^ index.html [L]
 ```
 ## REACT WITH EXTERNAL JS AND AUTO SCROLL UP
 • Run ``npm install --save react-helmet``\
-• Inside your src folder create a file called ``scripts.jsx``\
+• Within your ``src/components/scripts`` folder create a file called ``scripts.jsx``\
 • Add the following code
 ```
 import React, { Component } from 'react'; 
@@ -146,7 +146,7 @@ export default Scripts;
 • Next for every component you create add the following code
 
 ```
-import Scripts from './scripts.jsx';
+import Scripts from './scripts/scripts.jsx';
 ```
 
 ```
@@ -173,7 +173,7 @@ cd src/assets/js
 ```
 node read.js
 ```
-• Create another file named scroll.js and add the following code\
+• Create another file within ``src/components/scripts`` named ``scroll.js`` and add the following code\
 • Inside your app.js file add the following lines
 
 ```
@@ -196,23 +196,23 @@ export default withRouter(ScrollToTop);
 
 ```
 import React, { Component } from 'react';
-import { BrowserRouter as Router  } from "react-router-dom";
+import { HashRouter as Router  } from "react-router-dom";
 import './App.css';
 import Components from './components/index.jsx';
-import ScrollToTop from './scroll.js';
+import ScrollToTop from './components/scripts/scroll.js';
 
 class App extends Component {
   constructor() {
       super();
       this.state = {
-        base_url: 'http://localhost:8080/', // The base_url 
+        base_url: window.location.pathname, // The base_url 
         api_url: '' // Tha api url
       }
   }
 
   render() {
     return (
-        <Router basename={'/'}> {/* For production - Change to base directory folder name Eg. https://localhost/basename/  */}
+        <Router>
           <ScrollToTop>
             <Components base_url={this.state.base_url} api_url={this.state.api_url} />
           </ScrollToTop>
