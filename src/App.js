@@ -9,8 +9,8 @@ class App extends Component {
   constructor() {
       super();
       this.state = {
-        base_url: window.location.pathname, // For production - Change to base directory folder name Eg. https://localhost/basename/ 
-        api_url: '' // Tha api url
+        base_url: window.location.pathname,
+        api_url: '' // The api url
       }
   }
 
