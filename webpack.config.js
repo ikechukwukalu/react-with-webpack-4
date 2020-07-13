@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
+var webpack = require('webpack');
 
 module.exports = { 
     entry: './src/index.js', 
@@ -59,6 +60,11 @@ module.exports = {
                 from:'src/assets',
                 to:'assets'
             }
-        ])
+        ]),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
     ] 
 };
